@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block title %} Home {% endblock title %} {% block
+head%}
+<link rel="stylesheet" href="static/welcome.css" />
+
+{% endblock head%} {%block body%}
+<div class="d-flex flex-column justify-content-center w-100 h-100">
+  <div class="d-flex flex-column justify-content-center align-items-center">
+    <h1 class="fw-light text-white m-0">Hello!</h1>
+    <br />
+    <h2 class="fw-light text-white m-0">Join the wait-list!</h2>
+    <br>
+    <form>
+        <div class="mb-3">
+
+            <div class="input-group mb-3 ">
+                <input type="text" class="form-control" placeholder="Email ID" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button class="btn btn-primary" type="button" id="button-addon2">Sign Up</button>
+              </div>          
+
+        </div>
+  </div>
+</div>
+
+{%endblock%}
