@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   // array with texts to type in typewriter
   var dataText = [
     "Welcome to the ToDoe App!",
-    "This app lets you post your tasks publicly.",
+    "ToDoe lets you post your tasks publicly.",
     "Commiting publicly helps to accomplish your tasks better.🚀",
   ];
 

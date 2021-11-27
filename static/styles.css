@@ -11,3 +11,9 @@ body {
   /* the rest of your styling */
   opacity: 80%;
 }
+
+.idea {
+  text-align: center;
+  margin-top: 20px;
+  color: #0e6dfd;
+}

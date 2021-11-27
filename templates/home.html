@@ -8,17 +8,26 @@ head%}
     <h1 class="fw-light text-white m-0">Hello!</h1>
     <br />
     <h2 class="fw-light text-white m-0">Join the wait-list!</h2>
-    <br>
-    <form>
-        <div class="mb-3">
-
-            <div class="input-group mb-3 ">
-                <input type="text" class="form-control" placeholder="Email ID" aria-label="Recipient's username" aria-describedby="button-addon2">
-                <button class="btn btn-primary" type="button" id="button-addon2">Sign Up</button>
-              </div>          
-
+    <br />
+    <form action="/create" method="POST">
+      <div class="mb-3">
+        <div class="input-group mb-3 col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Email ID"
+            aria-label="Recipient's email"
+            aria-describedby="button-addon2"
+            name="email"
+          />
+          <button class="btn btn-primary" type="submit" id="button-addon2">
+            Sign Up
+          </button>
         </div>
+      </div>
+    </form>
   </div>
 </div>
+<script src="/static/index.js" charset="utf-8"></script>
 
 {%endblock%}

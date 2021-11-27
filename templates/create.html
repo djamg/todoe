@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block title %} Create (user_list) {% endblock title
+%} {% block head%}
+<link rel="stylesheet" href="static/styles.css" />
+<link rel="stylesheet" href="static/welcome.css" />
+
+{% endblock head%} {%block body%}
+<h2
+  style="
+    color: white;
+    text-align: center;
+    padding: 60px 40px 0px 40px;
+    word-wrap: break-word;
+  "
+>
+  {% if text %} {{text}}{% endif %} {% if textAlready %}{{textAlready}} {% endif
+  %} You should recieve an invite link on <br />{{email_id}} in a few days.
+</h2>
+<img
+  src="static/images/4862061.jpeg"
+  alt=""
+  style="display: block; margin: 0 auto; padding-top: 30px"
+/>
+{%endblock%}
