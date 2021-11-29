@@ -7,7 +7,7 @@ from app.models.profile import Profile
 @app.route('/',methods=["GET", "POST"])
 def hello_world():
     if request.method == "GET":
-        return render_template('home.html')
+        return render_template('index.html')
     elif request.method=="POST":
         email_id = request.form['email']
         new_signup = Profile(email_id = email_id)
