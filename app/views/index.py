@@ -22,6 +22,3 @@ def hello_world():
         except:
             "There was a problem signing up"
 
-@app.route('/list')
-def listTasks():
-    pass
