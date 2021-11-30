@@ -1,4 +1,4 @@
-from flask import render_template, request, Blueprint
+from flask import render_template, request, Blueprint, 
 from app import app, db
 from app.models.profile import Profile 
 
@@ -21,3 +21,7 @@ def hello_world():
                 return render_template('create.html', textAlready="Thanks for signing up! " ,email_id=email_id)
         except:
             "There was a problem signing up"
+
+@app.route('/list')
+def listTasks():
+    pass
