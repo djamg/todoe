@@ -2,3 +2,4 @@
 venv
 *.db
 config.py
+__pycache__
