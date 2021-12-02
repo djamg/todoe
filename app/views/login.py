@@ -15,7 +15,6 @@ def login():
          # login code goes here
         email = request.form['email']
         password = request.form['password']
-        print(email, password)
         user = User.query.filter_by(email_id=email).first()
 
         # check if the user actually exists
@@ -26,4 +25,4 @@ def login():
 
         # if the above check passes, then we know the user has the right credentials
         print("Checks passed")
-        return render_template('create.html', textAlready="Successfully LOGGED IN", email_id="checks passed")
+        return render_template('create.html', name=user.name)

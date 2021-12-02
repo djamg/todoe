@@ -1,14 +1,17 @@
 {% extends 'base.html' %} {% block title %} Sign In {% endblock title %} {%
 block head%}
 <link rel="stylesheet" href="static/styles.css" />
-<link rel="stylesheet" href="static/sign_in.css" />
+<link rel="stylesheet" href="static/login.css" />
 
 {% endblock head%} {%block body%}
 <section class="vh-75 gradient-custom">
   <div class="container py-5 h-50">
     <div class="row d-flex justify-content-center align-items-center h-50">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-        <div class="card bg-primary text-white" style="border-radius: 1rem">
+        <div
+          class="card bg-primary text-white card-transparent"
+          style="border-radius: 3rem"
+        >
           <div class="card-body text-center">
             <div class="mb-md-5 mt-md-4">
               {% with messages = get_flashed_messages() %} {% if messages %} {%
@@ -23,6 +26,7 @@ block head%}
                     id="typeEmailX"
                     class="form-control form-control-lg"
                     name="email"
+                    required
                   />
                   <label class="form-label" for="typeEmailX">Email</label>
                 </div>
@@ -33,6 +37,7 @@ block head%}
                     id="typePasswordX"
                     class="form-control form-control-lg"
                     name="password"
+                    required
                   />
                   <label class="form-label" for="typePasswordX">Password</label>
                 </div>

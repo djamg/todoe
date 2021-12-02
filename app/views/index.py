@@ -1,4 +1,4 @@
-from flask import render_template, request, Blueprint, 
+from flask import render_template, request, Blueprint
 from app import app, db
 from app.models.profile import Profile 
 
@@ -8,6 +8,7 @@ from app.models.profile import Profile
 def hello_world():
     if request.method == "GET":
         return render_template('index.html')
+
     elif request.method=="POST":
         email_id = request.form['email']
         new_signup = Profile(email_id = email_id)
@@ -22,3 +23,6 @@ def hello_world():
         except:
             "There was a problem signing up"
 
+@app.route('/list')
+def listTasks():
+    pass

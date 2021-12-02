@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   var dataText = [
     "Welcome to the ToDoe App!",
     "ToDoe lets you post your tasks publicly.",
-    "Commiting publicly helps to accomplish your tasks better.🚀",
+    "Commiting publicly helps to accomplish tasks better.🚀",
   ];
 
   // type one text in the typwriter

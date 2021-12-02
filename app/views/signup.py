@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect
+from flask import render_template, request, redirect, flash
 from app import app, db
 from app.models.profile import Profile
 from app.models.user import User
@@ -18,7 +18,8 @@ def signup():
         newUser = User(name = name, email_id = email_id, user_name = user_name, password = generate_password_hash(password, method='sha256') )
         try:
             if bool(User.query.filter_by(email_id=email_id).first()):
-                return render_template('create.html', text="You have already signed up! ",email_id=email_id)
+                flash('You have already Signed up')
+                return render_template('signup.html')
                 
             else:
                 db.session.add(newUser)
