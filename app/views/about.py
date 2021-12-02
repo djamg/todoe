@@ -6,6 +6,9 @@ from app.models.profile import Profile
 # line 2
 # line 2a
 # line 3
+# about page
+# about4
+
 @app.route('/about', methods=['GET'])
 def about():
     return render_template('about.html')
