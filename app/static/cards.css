@@ -1,4 +1,18 @@
-.card {
+.card,
+.org-card {
   border-radius: 30px;
   box-shadow: black;
+  border-width: 0px;
+}
+
+.org-card {
+  height: 18vh;
+  width: 18rem;
+}
+
+@media only screen and (max-width: 992px) {
+  .org-card {
+    height: 6vh;
+    width: 100%;
+  }
 }

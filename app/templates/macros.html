@@ -1,6 +1,6 @@
 {% macro card(title) %}
 <link rel="stylesheet" href="static/cards.css" />
-<div class="card p-2 align-self-center m-2 shadow" style="width: 100%">
+<div class="card px-2 pt-0 align-self-center m-2 shadow" style="width: 100%">
   <div class="card-body">
     <h5 class="card-title">{{title}}</h5>
     <h6 class="card-subtitle mb-2 text-muted">Due Date: 20/12/2021</h6>
@@ -14,14 +14,21 @@
       <div
         class="progress-bar"
         role="progressbar"
-        style="width: 25%"
+        style="width: 42%"
         aria-valuenow="25"
         aria-valuemin="0"
         aria-valuemax="100"
       >
-        25%
+        42%
       </div>
     </div>
   </div>
+</div>
+{% endmacro %} {% macro org_card(title) %}
+<div
+  class="org-card align-self-center shadow m-2 p2"
+  style="display: inline-block"
+>
+  <div class="org-card-body text-center"><h4>{{title}}</h4></div>
 </div>
 {% endmacro %}
