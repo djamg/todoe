@@ -3,6 +3,6 @@ from app import app, db
 from app.models.profile import Profile 
 
 
-@app.route('/about', methods=['GET'])
-def about():
-    return render_template('about.html')
+@app.route('/profile', methods=['GET'])
+def profile():
+    return render_template('profile.html')

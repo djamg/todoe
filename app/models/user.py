@@ -1,8 +1,9 @@
 from app import db
 from datetime import datetime
+from flask_login import UserMixin
 
 
-class User(db.Model):
+class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True) # primary keys are required by SQLAlchemy
     email_id = db.Column(db.String(100), unique=True, nullable=True)
     password = db.Column(db.String(100))
@@ -13,3 +14,5 @@ class User(db.Model):
 
     def __repr__(self):
         return '<User%>'%self.id
+
+    
