@@ -21,12 +21,14 @@ def login():
         email = request.form['email']
         password = request.form['password']
         user = User.query.filter_by(email_id=email).first()
-        login_user(user, remember=True)
         # check if the user actually exists
         # take the user-supplied password, hash it, and compare it to the hashed password in the database
         if not user or not check_password_hash(user.password, password):
             flash('Please check your login details and try again.')
             return render_template('login.html') # if the user doesn't exist or password is wrong, reload the page
+        else:
+            login_user(user, remember=True)
+
 
         # if the above check passes, then we know the user has the right credentials
         print("Checks passed")
