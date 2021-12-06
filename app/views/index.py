@@ -1,7 +1,7 @@
 from flask import render_template, request, Blueprint
 from app import app, db
 from app.models.profile import Profile 
-
+from flask_login import current_user
 
 
 @app.route('/',methods=["GET", "POST"])
@@ -19,7 +19,7 @@ def hello_world():
             else:
                 db.session.add(new_signup)
                 db.session.commit()
-                return render_template('create.html', textAlready="Thanks for signing up! " ,email_id=email_id)
+                return render_template('create.html', textAlready="Thanks for signing up! " ,email_id=email_id, current_user=current_user)
         except:
             "There was a problem signing up"
 

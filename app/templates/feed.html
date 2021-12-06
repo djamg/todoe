@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% from "card.html" import card with context %} {%
+block title %} Feed {% endblock title %} {% block head%}
+<link rel="stylesheet" href="static/styles.css" />
+<link rel="stylesheet" href="static/cards.css" />
+
+{% endblock head%} {%block body%}
+<div class="meta-container d-flex flex-row">
+  <div class="option-container">
+    <div class="card" style="width: 18rem">
+      <ul class="">
+        <li class="">An item</li>
+        <li class="">A second item</li>
+        <li class="">A third item</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-container d-flex flex-column mt-2 ms-4">
+    {{card("card1")}}{{card("card2")}}{{card("card3")}}
+  </div>
+</div>
+
+{%endblock%}

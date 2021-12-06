@@ -5,6 +5,17 @@ head%}
 {% endblock head%} {%block body%}
 <div class="d-flex flex-column justify-content-center w-100 h-100">
   <div class="d-flex flex-column justify-content-center align-items-center">
+    {% if current_user.is_authenticated %}
+    <h2 class="fw-light text-white m-0">Let's go to the feed</h2>
+    <br /><a href="feed">
+      <button
+        type="button"
+        class="btn btn-primary px-2 py-2 mx-auto text-center fs-4"
+      >
+        Feed ➡️
+      </button>
+    </a>
+    {% else %}
     <h1 class="fw-light text-white m-1">Hello!</h1>
     <br />
     <h2 class="fw-light text-white m-0">Join the wait-list!🤭</h2>
@@ -33,6 +44,7 @@ head%}
         </div>
       </div>
     </form>
+    {% endif %}
   </div>
 </div>
 <script src="/static/index.js" charset="utf-8"></script>

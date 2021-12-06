@@ -1,0 +1,27 @@
+{% macro card(title) %}
+<link rel="stylesheet" href="static/cards.css" />
+<div class="card p-2 align-self-center m-2 shadow" style="width: 100%">
+  <div class="card-body">
+    <h5 class="card-title">{{title}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Due Date: 20/12/2021</h6>
+    <p class="card-text">
+      Some quick example text to build on the card title and make up the bulk of
+      the card's content.
+    </p>
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+    <div class="progress mt-2">
+      <div
+        class="progress-bar"
+        role="progressbar"
+        style="width: 25%"
+        aria-valuenow="25"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      >
+        25%
+      </div>
+    </div>
+  </div>
+</div>
+{% endmacro %}
