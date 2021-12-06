@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% from "macros.html" import card,org_card with
+context %} {% block title %} Feed {% endblock title %} {% block head%}
+<link rel="stylesheet" href="static/styles.css" />
+<link rel="stylesheet" href="static/cards.css" />
+
+{% endblock head%} {%block body%}
+<div class="meta-container d-lg-flex flex-row">
+  <div class="organization-container d-flex flex-column mt-2 mx-4">
+    <h3>Top Organizations:</h3>
+    {{org_card("Tech")}}{{org_card("Gaming")}}{{org_card("Content")}}
+    <!-- <span class="view-more text-center text-primary">View more ↓</span> -->
+  </div>
+  <div class="card-container d-flex flex-column mt-2 mx-4">
+    <h3>Tasks:</h3>
+    {{card("card1")}}{{card("card2")}}{{card("card3")}}{{card("card4")}}{{card("card5")}}{{card("card6")}}
+  </div>
+</div>
+
+{%endblock%}
