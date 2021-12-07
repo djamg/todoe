@@ -1,16 +1,30 @@
 {% macro card(title) %}
 <link rel="stylesheet" href="static/cards.css" />
-<div class="card px-2 pt-0 align-self-center m-2 shadow" style="width: 100%">
+<div class="card px-2 pt-0 align-self-center m-2 shadow" style="">
   <div class="card-body">
-    <h5 class="card-title">{{title}}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Due Date: 20/12/2021</h6>
-    <p class="card-text">
+    <span class="organization-title position-absolute end-0 pe-4">Python</span>
+    <h5 class="card-title text-wrap" style="width: 80%">{{title}}</h5>
+    <span class="task-due text-muted">Due: 20/12/2021</span>
+    <p
+      class="card-text"
+      style="
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+      "
+    >
       Some quick example text to build on the card title and make up the bulk of
-      the card's content.
+      the card's content. Some quick example text to build on the card title and
+      make up the bulk of the card's content. Some quick example text to build
+      on the card title and make up the bulk of the card's content. Some quick
+      example text to build on the card title and make up the bulk of the card's
+      content. Some quick example text to build on the card title and make up
+      the bulk of the card's content.
     </p>
-    <a href="#" class="card-link">Card link</a>
     <a href="#" class="card-link">Another link</a>
-    <div class="progress mt-2">
+    <div class="progress mt-2 mb-2">
       <div
         class="progress-bar"
         role="progressbar"
