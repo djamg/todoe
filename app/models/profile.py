@@ -8,4 +8,4 @@ class Profile(db.Model):
     date_created = db.Column(db.DateTime, default = datetime.utcnow)
 
     def __repr__(self):
-        return '<UserSignUp %>'%self.id
+        return '<Profile %s>'%self.id

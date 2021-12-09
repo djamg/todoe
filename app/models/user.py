@@ -1,3 +1,4 @@
+from sqlalchemy.orm import backref
 from app import db
 from datetime import datetime
 from flask_login import UserMixin
@@ -10,7 +11,7 @@ class User(UserMixin, db.Model):
     name = db.Column(db.String(100))
     user_name = db.Column(db.String(20))
     date_created = db.Column(db.DateTime, default = datetime.utcnow)
-
+    tasks = db.relationship('Task', backref='owner')
 
     def __repr__(self):
         return '<User%>'%self.id

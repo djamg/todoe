@@ -3,7 +3,19 @@
 <div class="card px-2 pt-0 align-self-center m-2 shadow" style="">
   <div class="card-body">
     <span class="organization-title position-absolute end-0 pe-4">Python</span>
-    <h5 class="card-title text-wrap" style="width: 80%">{{title}}</h5>
+    <h5
+      class="card-title text-wrap"
+      style="
+        width: 80%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+      "
+    >
+      {{title}}
+    </h5>
     <span class="task-due text-muted">Due: 20/12/2021</span>
     <p
       class="card-text"
@@ -11,7 +23,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
-        -webkit-line-clamp: 3;
+        -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
       "
     >
