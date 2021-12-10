@@ -23,3 +23,9 @@ body {
   --animate-duration: 1800ms;
   --animate-delay: 1.9s;
 }
+
+@media only screen and (max-width: 992px) {
+  .navbar-nav .nav-item .btn-modal {
+    margin: 15px 0 15px 0;
+  }
+}

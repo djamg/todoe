@@ -7,23 +7,22 @@ context %} {% block title %} Feed {% endblock title %} {% block head%}
 <div class="meta-container d-lg-flex flex-row">
   <div class="organization-container d-flex flex-column mt-2 mx-4">
     <h3>Top Organizations:</h3>
-    {{org_card("Tech")}}{{org_card("Gaming")}}{{org_card("Content")}}
+    {{org_card("Tech")}}{{org_card("Gaming")}}{{org_card("Movies")}}
     <!-- <span class="view-more text-center text-primary">View more ↓</span> -->
   </div>
   <div class="card-container d-flex flex-column mt-2 mx-4">
     <h3>Tasks:</h3>
-    {{card("card1")}}{{card("card2")}}{{card("text to build on the card then
-    build on the card the build on the card build on the
-    card")}}{{card("card4")}}{{card("card5")}}{{card("card6")}}
+    {% for i in cards %} {{card(i.title, i.organization_id, i.description,
+    i.end_date)}} {% endfor %}
   </div>
-  <div
+  <!-- <div
     class="card-container d-flex flex-column mt-2 mx-4"
     style="max-width: 80%"
   >
     <h3>Top Users:</h3>
     This is a card, number 1 This is a card, number 1 This is a card, number 1
     This is a card, number 1
-  </div>
+  </div> -->
 </div>
 
 {%endblock%}
