@@ -57,3 +57,89 @@
 </div>
 {% endmacro %}
 <!--  -->
+{% macro create_task_modal() %}
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Create Task</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="task-title" class="col-form-label">Title:</label>
+            <input type="text" class="form-control" id="task-title" />
+          </div>
+          <div class="mb-3">
+            <label for="task-description" class="col-form-label"
+              >Description:</label
+            >
+            <textarea class="form-control" id="task-description"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="task-end-date" class="col-form-label"
+              >Completion Date:</label
+            >
+            <input
+              type="datetime-local"
+              class="form-control"
+              id="task-end-date"
+            />
+          </div>
+          <div class="mb-3" id="myModal">
+            <label for="task-organization" class="col-form-label"
+              >Organization:</label
+            >
+            <select
+              class="js-example-basic-single js-states form-control"
+              id="id_label_single"
+              style="width: 100%"
+            >
+              <option value="AL">Alabama</option>
+              <option value="XY">BSDASd</option>
+              <option value="ZA">Aldjnkaabama</option>
+
+              <option value="WY">Wyoming</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">Create</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $("#id_label_single").select2({
+    dropdownParent: $("#myModal"),
+    ajax: {
+      url: "https://api.github.com/search/repositories",
+      data: function (params) {
+        var query = {
+          search: params.term,
+          page: params.page || 1,
+        };
+
+        // Query parameters will be ?search=[term]&page=[page]
+        return query;
+      },
+    },
+  });
+</script>
+{% endmacro %}
