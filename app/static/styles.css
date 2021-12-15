@@ -10,7 +10,7 @@ body {
   -moz-box-shadow: 0 8px 6px -6px #999;
   box-shadow: 0 8px 6px -6px #999;
   /* the rest of your styling */
-  opacity: 90%;
+  opacity: 97%;
 }
 
 .idea {
@@ -22,4 +22,10 @@ body {
 :root {
   --animate-duration: 1800ms;
   --animate-delay: 1.9s;
+}
+
+@media only screen and (max-width: 992px) {
+  .navbar-nav .nav-item .btn-modal {
+    margin: 15px 0 15px 0;
+  }
 }

@@ -4,16 +4,32 @@ context %} {% block title %} Feed {% endblock title %} {% block head%}
 <link rel="stylesheet" href="static/cards.css" />
 
 {% endblock head%} {%block body%}
-<div class="meta-container d-lg-flex flex-row">
+<div class="meta-container" style="min-width: 100%">
   <div class="organization-container d-flex flex-column mt-2 mx-4">
     <h3>Top Organizations:</h3>
-    {{org_card("Tech")}}{{org_card("Gaming")}}{{org_card("Content")}}
+    {{org_card("Tech",
+    "https://picsum.photos/300/170/?blur=2")}}{{org_card("Gaming",
+    "https://picsum.photos/300/170/?blur=1")}}{{org_card("Movies",
+    "https://picsum.photos/300/170/")}}
     <!-- <span class="view-more text-center text-primary">View more ↓</span> -->
   </div>
   <div class="card-container d-flex flex-column mt-2 mx-4">
     <h3>Tasks:</h3>
-    {{card("card1")}}{{card("card2")}}{{card("card3")}}{{card("card4")}}{{card("card5")}}{{card("card6")}}
+    {% for i in cards %} {{card(i.title, i.organization_id, i.description,
+    i.end_date, i.id, i.complete, i.user.user_name, i.user_id)}} {% endfor %}
+    <h3 class="pt-5">Completed:</h3>
+    {% for i in completed_cards %} {{card(i.title, i.organization_id,
+    i.description, i.end_date, i.id, i.complete, i.user.user_name)}} {% endfor
+    %}
   </div>
+  <!-- <div
+    class="card-container d-flex flex-column mt-2 mx-4"
+    style="max-width: 80%"
+  >
+    <h3>Top Users:</h3>
+    This is a card, number 1 This is a card, number 1 This is a card, number 1
+    This is a card, number 1
+  </div> -->
 </div>
 
 {%endblock%}
