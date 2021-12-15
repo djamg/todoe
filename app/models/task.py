@@ -9,6 +9,7 @@ class Task(db.Model):
     date_created = db.Column(db.DateTime, default = datetime.utcnow)
     start_date = db.Column(db.DateTime)
     end_date = db.Column(db.DateTime)
+    complete = db.Column(db.Integer, default=0)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     organization_id = db.Column(db.Integer, db.ForeignKey('organization.id'))
 
