@@ -12,6 +12,7 @@ class User(UserMixin, db.Model):
     user_name = db.Column(db.String(20))
     date_created = db.Column(db.DateTime, default = datetime.utcnow)
     tasks = db.relationship('Task', backref='user')
+    comments = db.relationship('Comment', backref='user')
 
     def __repr__(self):
         return '<User%s>'%self.id

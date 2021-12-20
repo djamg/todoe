@@ -42,3 +42,20 @@ body {
     width: 90%;
   }
 }
+
+.completed-tasks .card {
+  border-width: 2px;
+  border-color: green;
+}
+
+.completed-tasks .card h5 {
+  text-decoration: line-through;
+}
+
+.expand {
+  position: absolute;
+  top: 35%;
+  right: 3%;
+  font-size: 2rem;
+  color: #0e6dfd;
+}

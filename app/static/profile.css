@@ -1,0 +1,5 @@
+.card-profile,
+.card-profile img {
+  border-radius: 30px;
+  overflow: hidden;
+}

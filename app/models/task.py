@@ -1,3 +1,4 @@
+from sqlalchemy.orm import backref
 from app import db
 from datetime import datetime
 
@@ -12,6 +13,7 @@ class Task(db.Model):
     complete = db.Column(db.Integer, default=0)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     organization_id = db.Column(db.Integer, db.ForeignKey('organization.id'))
+    comments = db.relationship("Comment", backref="task")
 
     def __repr__(self):
         return '<Task %s>'%self.id

@@ -1,10 +1,12 @@
 {% extends 'base.html' %} {% from "macros.html" import card,org_card with
-context %}{% block title %} Feed {% endblock title %} {% block head%}
+context %} {% block title %} Feed {% endblock title %} {% block head%}
 <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}" />
 <link rel="stylesheet" href="{{url_for('static', filename='cards.css')}}" />
 <link rel="stylesheet" href="{{url_for('static', filename='profile.css')}}" />
 
 {% endblock head%} {%block body%}
+<!--  -->
+
 <div class="d-lg-flex flex-grow-0">
   <div
     class="card-profile mt-3 ms-4 me-3 shadow"
@@ -31,17 +33,25 @@ context %}{% block title %} Feed {% endblock title %} {% block head%}
   </div>
 
   <div class="card-container d-flex flex-column mt-2 mx-4">
-    <div class="pending-tasks">
-      <h3></h3>
-      {% for i in cards %} {{card(i.title, i.organization_id, i.description,
-      i.end_date, i.id, i.complete, i.user.user_name, i.user_id)}} {% endfor %}
+    <div class="single-task">
+      {{card(single_card.title, single_card.organization_id,
+      single_card.description, single_card.end_date, single_card.id,
+      single_card.complete, single_card.user.user_name, single_card.user_id)}}
     </div>
-    <div class="completed-tasks">
-      <h3 class="pt-5 completed-card">Completed:</h3>
-      {% for i in completed_cards %} {{card(i.title, i.organization_id,
-      i.description, i.end_date, i.id, i.complete, i.user.user_name,
-      i.user_id)}} {% endfor %}
+    <h3 class="pt-3 ps-2">Comments:</h3>
+    <div class="comments-container">
+      {% for i in comments %}
+      <div class="comment shadow m-2 my-3" style="border-radius: 20px">
+        <div class="comment-user p-2 ps-4">
+          <a href="/profile/{{i.user.user_name}}">@{{i.user.user_name}}</a> |
+          {{i.date_created.strftime('%d-%m-%Y')}}
+        </div>
+        <div class="comment-description px-2 pb-3 ps-4">{{i.description}}</div>
+      </div>
+      {% endfor %}
     </div>
   </div>
 </div>
+
+<!--  -->
 {%endblock%}
