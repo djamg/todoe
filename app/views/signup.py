@@ -1,4 +1,3 @@
-from os import chflags
 from flask import render_template, request, redirect, flash
 from app import app, db, mail
 from app.models.profile import Profile
