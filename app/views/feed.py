@@ -16,6 +16,9 @@ from sqlalchemy import select
 @login_required
 def feed():
     cards = db.session.query(Task).filter_by(complete = 0).order_by(Task.end_date).all()
+    # print('-----------------------------------------')
+    # print(cards[3].get_remaining_days())
+    # print(cards[3].get_remaining_days_percentage())
     completed_cards = db.session.query(Task).filter_by(complete = 1).order_by(Task.end_date).all()
     return render_template('feed.html', cards=cards, completed_cards=completed_cards)
 

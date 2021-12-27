@@ -7,15 +7,18 @@ from app.models.organization import Organization
 from flask_login import current_user
 
 
+
 @app.route('/profile', methods=['GET'])
 def user_profile():
-    cards = db.session.query(Task).filter_by(user_id=current_user.id).order_by(Task.end_date).all()
+    profile = Profile.query.filter_by(user_id=current_user.id).first()
+    cards = db.session.query(Task).filter_by(user_id=current_user.id, complete = 0).order_by(Task.end_date).all()
     completed_cards = db.session.query(Task).filter_by(user_id=current_user.id, complete = 1).order_by(Task.end_date).all()
-    return render_template('profile.html', current_user=current_user, completed_cards=completed_cards, cards=cards)
+    return render_template('profile.html', current_user=current_user, completed_cards=completed_cards, cards=cards, profile=profile)
 
 @app.route('/profile/<user_name>', methods=['GET'])
 def profile(user_name):
     user_id = User.query.filter_by(user_name=user_name).first().id
+    profile = Profile.query.filter_by(user_id=current_user.id).first()
     cards = db.session.query(Task).filter_by(user_id=user_id, complete=0).order_by(Task.end_date).all()
     completed_cards = db.session.query(Task).filter_by(user_id=user_id, complete = 1).order_by(Task.end_date).all()
-    return render_template('profile.html', current_user=current_user, completed_cards=completed_cards, cards=cards)
+    return render_template('profile.html', current_user=current_user, completed_cards=completed_cards, cards=cards, profile=profile)

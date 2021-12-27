@@ -1,5 +1,6 @@
 from enum import unique
 from flask import Flask
+from flask_mail import Mail
 from flask_sqlalchemy import SQLAlchemy
 import logging
 from flask_login import LoginManager
@@ -17,6 +18,7 @@ metadata = MetaData(
 )
 
 app = Flask(__name__)
+mail = Mail(app)
 app.config.from_pyfile('../config.py')
 
 # app.secret_key = "super secret key"

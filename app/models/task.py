@@ -18,8 +18,10 @@ class Task(db.Model):
     def __repr__(self):
         return '<Task %s>'%self.id
 
-    def get_remaining_time(self):
-        return datetime.strptime(str(self.end_date),'%Y-%m-%d %H:%M:%S') - datetime.utcnow()
+    def get_remaining_days(self):
+        days_remaining = (self.end_date-datetime.utcnow())
+        return days_remaining
 
-    def get_remaining_time_percentage(self):
-        return datetime.strptime(str(self.end_date),'%Y-%m-%d %H:%M:%S') - datetime.utcnow()
+    def get_remaining_days_percentage(self):
+        days_remaining_percentage = 100-(self.end_date-datetime.utcnow())/(self.end_date-self.date_created)*100
+        return days_remaining_percentage
