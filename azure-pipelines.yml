@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: amg-azure-vm
 
 steps:
 - script: echo Hello, world!
